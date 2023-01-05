@@ -39,10 +39,8 @@ async def toss(ctx):
     import random
     toss = random.randint(1, 2)
     if toss == 1:
-        await ctx.send("Heads")
         await ctx.send(file=discord.File('heads-coin-toss.gif'))
     else:
-        await ctx.send("Tails")
         await ctx.send(file=discord.File('tails-coin-toss.gif'))
 
 class JoinDistance:

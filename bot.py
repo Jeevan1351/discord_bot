@@ -65,4 +65,15 @@ async def delta(ctx, *, member: JoinDistanceConverter):
     else:
         await ctx.send(f"Hm you're not so new. {member.delta.days} days!")
 
+@client.command(description="Get guild members")
+async def members(ctx):
+    res = []
+    members = ctx.guild.members
+    for member in members:
+        # print(member)
+        res.append(f"{member.name}#{member.discriminator}")
+    res = "\n".join(res)
+    res = "```"+res+"```"
+    await ctx.send(res)
+
 client.run(os.getenv('TOKEN'))
